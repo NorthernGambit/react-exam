@@ -6,7 +6,7 @@ export const fetchEvents = async () => {
 		"https://santosnr6.github.io/Data/events.json",
 	);
 
-	await asyncTimeout(850);
+	await asyncTimeout(1600);
 
 	return response.data;
 };

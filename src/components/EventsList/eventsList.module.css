@@ -1,0 +1,15 @@
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	list-style: none;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.listItem {
+	width: 100%;
+}

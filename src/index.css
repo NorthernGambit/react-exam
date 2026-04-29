@@ -38,3 +38,7 @@ h5 {
 	--black-06: rgba(0, 0, 0, 0.6);
 	--black-04: rgba(0, 0, 0, 0.4);
 }
+
+body {
+	background-color: var(--purple);
+}

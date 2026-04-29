@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { fetchEvents } from "../api/fetchEvents";
 
-export const useEventsStore = create((set) => ({
+export const useEventsStore = create((set, get) => ({
 	events: [],
 	isLoading: false,
 	isError: false,
@@ -22,5 +22,16 @@ export const useEventsStore = create((set) => ({
 		} finally {
 			set({ isLoading: false });
 		}
+	},
+	getEvent: (id) => {
+		const currentEvents = get().events;
+
+		if (currentEvents.length < 1) {
+			return null;
+		}
+
+		const eventExists = currentEvents.find((event) => event.id === id);
+
+		return eventExists ? eventExists : null;
 	},
 }));
