@@ -1,7 +1,11 @@
 .link {
+	display: grid;
+	place-items: center;
 	position: fixed;
 	top: 2rem;
 	right: 2rem;
+	width: 44px;
+	height: 44px;
 }
 
 .icon {
@@ -14,8 +18,8 @@
 	justify-content: center;
 	align-items: center;
 	position: absolute;
-	top: -8px;
-	right: -8px;
+	top: -2px;
+	right: -2px;
 	background-color: var(--alert);
 	color: var(--white);
 	font-weight: 600;

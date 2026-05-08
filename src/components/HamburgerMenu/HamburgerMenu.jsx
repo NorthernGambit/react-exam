@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./hamburgerMenu.module.css";
 import { Link } from "react-router-dom";
-import { AnimatePresence, motion, stagger } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { hamburgerMenuVariants } from "../../animations/hamburgerMenu.animation";
 
 const HamburgerMenu = () => {

@@ -10,6 +10,7 @@ import { globalVariants } from "../../animations/global.animation";
 import AlertMessage from "../../components/AlertMessage/AlertMessage";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
+import { ticketsVariants } from "../../animations/tickets.animation";
 
 const TicketsPage = () => {
 	const { tickets } = useTickets();
@@ -31,23 +32,29 @@ const TicketsPage = () => {
 					</Link>
 				</>
 			) : (
-				<Swiper
-					effect={"cards"}
-					modules={[EffectCards]}
-					grabCursor={true}
-					className={styles.ticketSwiper}
+				<motion.div
+					variants={ticketsVariants.slideUp}
+					initial="hidden"
+					animate="visible"
 				>
-					{tickets.map((ticket) => {
-						return (
-							<SwiperSlide
-								key={ticket.id}
-								className={styles.slide}
-							>
-								<TicketCard ticket={ticket} />
-							</SwiperSlide>
-						);
-					})}
-				</Swiper>
+					<Swiper
+						effect={"cards"}
+						modules={[EffectCards]}
+						grabCursor={true}
+						className={styles.ticketSwiper}
+					>
+						{tickets.map((ticket) => {
+							return (
+								<SwiperSlide
+									key={ticket.id}
+									className={styles.slide}
+								>
+									<TicketCard ticket={ticket} />
+								</SwiperSlide>
+							);
+						})}
+					</Swiper>
+				</motion.div>
 			)}
 		</main>
 	);

@@ -15,7 +15,6 @@ import toast from "react-hot-toast";
 const EventDetailPage = () => {
 	const isLoading = useEventsStore((state) => state.isLoading);
 	const isError = useEventsStore((state) => state.isError);
-	const events = useEventsStore((state) => state.events);
 	const getEvent = useEventsStore((state) => state.getEvent);
 	const addEvent = useCartStore((state) => state.addEvent);
 	const navigate = useNavigate();
@@ -38,9 +37,10 @@ const EventDetailPage = () => {
 		addEvent(event, count);
 		toast.success(
 			`${count}x ${event.name} biljetter har lagts i kundvagnen!`,
-			{ duration: 2000, position: "bottom-center" },
+			{ duration: 2250, position: "bottom-center" },
 		);
-		navigate("/events");
+		// navigate("/events");
+		setCount(1);
 	};
 
 	return (
@@ -64,7 +64,7 @@ const EventDetailPage = () => {
 						variants={globalVariants.popIn}
 						initial="hidden"
 						animate="visible"
-						custom=".2"
+						custom={0.2}
 					>
 						You're about to score <br /> some tickets to
 					</motion.p>
@@ -73,7 +73,7 @@ const EventDetailPage = () => {
 						variants={globalVariants.popIn}
 						initial="hidden"
 						animate="visible"
-						custom=".4"
+						custom={0.4}
 					>
 						<h2 className={styles.eventTitle}>{event.name}</h2>
 						<time

@@ -2,7 +2,7 @@ import styles from "./cartList.module.css";
 import { useCartStore } from "../../stores/useCartStore";
 import { ul } from "motion/react-client";
 import ItemQuantityCard from "../ItemQuantityCard/ItemQuantityCard";
-import { AnimatePresence, motion, stagger } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { alternatingSidesVariants } from "../../animations/alternatingSides.animation";
 
 const CartList = () => {

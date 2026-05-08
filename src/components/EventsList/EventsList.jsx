@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import EventCard from "../EventCard/EventCard";
 import styles from "./eventsList.module.css";
-import { AnimatePresence, motion, stagger } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { alternatingSidesVariants } from "../../animations/alternatingSides.animation";
 
 const EventsList = ({ events }) => {
