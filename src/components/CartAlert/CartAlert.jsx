@@ -9,7 +9,7 @@ const CartAlert = () => {
 	const cart = useCartStore((state) => state.cart);
 
 	if (cart.length === 0) {
-		return;
+		return null;
 	}
 
 	const count = cart.reduce((total, current) => total + current.count, 0);

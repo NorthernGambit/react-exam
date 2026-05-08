@@ -1,4 +1,3 @@
-import { useEventsStore } from "../../stores/useEventsStore";
 import styles from "./landingPage.module.css";
 import landingPageImg from "../../assets/Group.svg";
 import { motion } from "motion/react";
