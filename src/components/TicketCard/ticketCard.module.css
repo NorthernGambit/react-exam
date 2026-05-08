@@ -1,0 +1,80 @@
+.card {
+	background-color: var(--white);
+	border-radius: 3px;
+	width: 100%;
+}
+
+.sectionName {
+	font-family: Fira Sans;
+	font-weight: 700;
+	font-size: 12px;
+	color: var(--black-04);
+}
+
+.title {
+	font-weight: 700;
+	font-size: 26px;
+	font-style: italic;
+	color: var(--pink);
+}
+
+.header {
+	padding: 1rem;
+	border-bottom: 2px dashed var(--black-04);
+}
+
+.whereSection {
+	background-color: rgba(0, 0, 0, 0.03);
+	padding: 1rem;
+	padding-bottom: 3rem;
+	border-bottom: 2px dashed var(--black-04);
+}
+
+.whereText {
+	font-weight: 600;
+	font-size: 18px;
+	color: var(--black-07);
+}
+
+.whenSection {
+	background-color: rgba(0, 0, 0, 0.06);
+	display: flex;
+	border-bottom: 2px dashed var(--black-04);
+}
+
+.whenBox {
+	flex: 1;
+	padding: 0.5rem 1rem;
+}
+
+.whenBox:nth-child(2) {
+	border: 2px dashed var(--black-04);
+	border-top: none;
+	border-bottom: none;
+}
+
+.whenText {
+	display: inline-block;
+	font-weight: 500;
+	font-size: 18px;
+	color: var(--black-06);
+}
+
+.infoSection {
+	background-color: rgba(0, 0, 0, 0.09);
+	padding: 1rem;
+	border-bottom: 2px dashed var(--black-04);
+}
+
+.infoText {
+	font-size: 12px;
+	color: var(--black-06);
+}
+
+.footer {
+	background-color: rgba(0, 0, 0, 0.12);
+	padding: 2rem 1rem 1rem 1rem;
+	display: grid;
+	place-items: center;
+	width: 100%;
+}

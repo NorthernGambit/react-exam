@@ -1,0 +1,26 @@
+.link {
+	position: fixed;
+	top: 2rem;
+	right: 2rem;
+}
+
+.icon {
+	color: white;
+	font-size: 2rem;
+}
+
+.count {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: -8px;
+	right: -8px;
+	background-color: var(--alert);
+	color: var(--white);
+	font-weight: 600;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	overflow: hidden;
+}

@@ -1,0 +1,60 @@
+.container {
+	width: 100%;
+	border: 2px solid var(--pink);
+	border-radius: 3px;
+	background-color: var(--purple-light);
+}
+
+.textContent {
+	padding: 1rem;
+	font-weight: 700;
+	font-size: 2rem;
+	text-align: center;
+	color: var(--white);
+	filter: drop-shadow(1px 1px 0 var(--pink));
+}
+
+.altTextContent {
+	color: var(--pink);
+	font-size: 1.5rem;
+	font-weight: 500;
+	font-style: italic;
+	padding: 0.5rem;
+}
+
+.altTextContentSub {
+	font-family: Fira Sans;
+	font-weight: 400;
+	font-size: 14px;
+	font-style: normal;
+	color: var(--green);
+}
+
+.counterGroup {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	border-top: 1px solid var(--pink);
+}
+
+.button {
+	display: inline-flex;
+	place-content: center;
+	font-size: 34px;
+	color: var(--white);
+	background-color: transparent;
+	border: none;
+	padding: 0 1.5rem;
+	cursor: pointer;
+}
+
+.count {
+	flex: 1;
+	text-align: center;
+	font-size: 28px;
+	color: var(--white);
+	border: 1px solid var(--pink);
+	border-top: none;
+	border-bottom: none;
+	padding: 0.25rem 0;
+}

@@ -1,0 +1,37 @@
+.main {
+	height: 100%;
+	/* padding: 2rem; */
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: center;
+	background-image: linear-gradient(
+		to bottom,
+		var(--pink) 0%,
+		var(--purple) 50%,
+		var(--purple) 100%
+	);
+}
+
+.title {
+	padding: 2rem;
+	font-size: 2rem;
+	font-weight: 700;
+	font-style: italic;
+	color: var(--purple);
+	text-align: center;
+}
+
+.ticketSwiper {
+	max-width: 375px;
+	width: 100%;
+	padding: 2rem;
+}
+
+.slide {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 3px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}

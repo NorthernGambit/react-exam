@@ -1,0 +1,72 @@
+.nav {
+	z-index: 50;
+	padding: 1rem;
+	position: fixed;
+	top: 0;
+	width: 260px;
+	height: 260px;
+	border-bottom-right-radius: 100%;
+	background-color: var(--purple-dark);
+	border: 3px solid var(--white);
+	border-left: none;
+	border-top: none;
+}
+
+.blurOverlay {
+	position: fixed;
+	z-index: 49;
+	backdrop-filter: blur(4px);
+	inset: 0;
+}
+
+.btn {
+	position: fixed;
+	top: 2rem;
+	left: 2rem;
+	z-index: 60;
+	cursor: pointer;
+	display: grid;
+	place-items: center;
+	background-color: var(--purple);
+	border: 1px solid var(--white-07);
+	border-radius: 3px;
+	aspect-ratio: 1;
+	padding: 0.25rem;
+}
+
+.list {
+	/* margin-top: -40px; */
+	margin-left: -16px;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+
+	gap: 0.5rem;
+}
+
+.listItem {
+	width: fit-content;
+	padding: 1rem 0 1rem 1rem;
+}
+
+.listItem > a {
+	padding: 1rem 0 1rem 1rem;
+	color: var(--white);
+	filter: drop-shadow(1px 1px 0 var(--pink));
+	font-size: 1.75rem;
+	font-weight: 600;
+	text-align: left;
+	cursor: pointer;
+}
+
+.listItem:nth-child(1) {
+	margin-left: 7rem;
+}
+
+.listItem:nth-child(2) {
+	margin-left: 5.5rem;
+}
+
+.listItem:nth-child(3) {
+	margin-left: 0rem;
+}

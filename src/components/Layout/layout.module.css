@@ -1,0 +1,5 @@
+.app {
+	background-color: var(--purple);
+	height: 100dvh;
+	overflow: hidden;
+}

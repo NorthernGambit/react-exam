@@ -1,0 +1,20 @@
+.form {
+	display: inline-flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.input {
+	background-color: var(--white-01);
+	background-image: url(../../assets/searchIcon.png);
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+	padding: 10px 10px 10px 40px;
+	border: none;
+	border-radius: 3px;
+	height: 40px;
+	width: 100%;
+	color: var(--white);
+	font-size: 1.25rem;
+}

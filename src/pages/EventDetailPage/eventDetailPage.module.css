@@ -1,0 +1,56 @@
+.main {
+	height: 100%;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+	align-items: center;
+}
+
+.main > div:nth-child(4) {
+	margin-top: auto;
+}
+
+.title {
+	font-size: 2rem;
+	font-weight: 700;
+	font-style: italic;
+	color: var(--pink);
+	text-align: center;
+}
+
+.titleSub {
+	font-family: Fira Sans;
+	font-weight: 400;
+	font-size: 19px;
+	color: var(--white-08);
+	text-align: center;
+	font-style: italic;
+}
+
+.infoSection {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.eventTitle {
+	font-size: 35px;
+	font-weight: 700;
+	font-style: italic;
+	color: var(--pink);
+	text-align: center;
+}
+
+.when {
+	font-weight: 700;
+	font-size: 19px;
+	text-align: center;
+	color: var(--green);
+}
+
+.where {
+	font-weight: 400;
+	text-align: center;
+	color: var(--white-07);
+}

@@ -1,0 +1,8 @@
+.blurOverlay {
+	z-index: 60;
+	backdrop-filter: blur(4px);
+	position: fixed;
+	inset: 0;
+	display: grid;
+	place-items: center;
+}
