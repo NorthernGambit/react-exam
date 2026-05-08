@@ -10,7 +10,6 @@
 a,
 a:visited {
 	text-decoration: none;
-	color: inherit;
 }
 
 h1,
@@ -23,9 +22,11 @@ h5 {
 
 :root {
 	--purple: rgba(35, 31, 66, 1);
-	--pink: rgba(245, 107, 154, 1);
+	--purple-light: rgb(38, 33, 73);
+	--purple-dark: rgb(25, 22, 54);
+	--pink: rgba(243, 88, 140, 1);
 	--green: rgba(55, 174, 171, 1);
-	--green-light: rgba(55, 174, 171, 1);
+	--green-light: rgba(40, 128, 124, 1);
 	--grey: rgba(208, 208, 208, 1);
 	--white: white;
 	--white-08: rgba(255, 255, 255, 0.8);
@@ -33,10 +34,15 @@ h5 {
 	--white-03: rgba(255, 255, 255, 0.3);
 	--white-02: rgba(255, 255, 255, 0.2);
 	--white-01: rgba(255, 255, 255, 0.1);
-	--black-08: rgba(0, 0, 0, 0.8);
+	/* --black-08: rgba(0, 0, 0, 0.8);
 	--black-07: rgba(0, 0, 0, 0.7);
 	--black-06: rgba(0, 0, 0, 0.6);
-	--black-04: rgba(0, 0, 0, 0.4);
+	--black-04: rgba(0, 0, 0, 0.4); */
+	--black-08: rgba(0, 0, 0, 0.9);
+	--black-07: rgba(0, 0, 0, 0.8);
+	--black-06: rgba(0, 0, 0, 0.7);
+	--black-04: rgba(0, 0, 0, 0.6);
+	--alert: rgb(172, 33, 33);
 }
 
 body {

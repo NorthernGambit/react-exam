@@ -1,17 +1,47 @@
 import { useEventsStore } from "../../stores/useEventsStore";
 import styles from "./landingPage.module.css";
 import landingPageImg from "../../assets/Group.svg";
+import { motion } from "motion/react";
+import { landingPageVariations } from "../../animations/landingPage.animation";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const LandingPage = () => {
-	const events = useEventsStore((state) => state.events);
-	const isLoading = useEventsStore((state) => state.isLoading);
-	const isError = useEventsStore((state) => state.isError);
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			navigate("/events");
+		}, 3500);
+		return () => clearTimeout(timer);
+	}, [navigate]);
 
 	return (
 		<main className={styles.main}>
-			<img className={styles.image} src={landingPageImg} alt="logo" />
-			<h1 className={styles.title}>Where It's @</h1>
-			<p className={styles.text}>Ticketing made easy</p>
+			<motion.img
+				className={styles.image}
+				src={landingPageImg}
+				alt="logo"
+				variants={landingPageVariations.image}
+				initial="hidden"
+				animate="visible"
+			/>
+			<motion.h1
+				className={styles.title}
+				variants={landingPageVariations.header}
+				initial="hidden"
+				animate="visible"
+			>
+				Where It's @
+			</motion.h1>
+			<motion.p
+				className={styles.text}
+				variants={landingPageVariations.text}
+				initial="hidden"
+				animate="visible"
+			>
+				Ticketing made easy
+			</motion.p>
 		</main>
 	);
 };

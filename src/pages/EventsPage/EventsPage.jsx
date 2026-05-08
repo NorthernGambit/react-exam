@@ -4,21 +4,35 @@ import loadingImg from "../../assets/loadingCircle.apng";
 import LoadingCircle from "../../components/LoadingCircle/LoadingCircle";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import EventsList from "../../components/EventsList/EventsList";
+import { useFilterEvents } from "../../hooks/useFilterEvents";
+import { motion } from "motion/react";
+import { globalVariants } from "../../animations/global.animation";
+import AlertMessage from "../../components/AlertMessage/AlertMessage";
 
 const EventsPage = () => {
 	const isLoading = useEventsStore((state) => state.isLoading);
 	const isError = useEventsStore((state) => state.isError);
+	const events = useEventsStore((state) => state.events);
+	const { setUserInput, filteredEvents } = useFilterEvents();
+	const eventsToDisplay = filteredEvents || events;
 
 	return (
 		<main className={styles.main}>
-			<h1 className={styles.title}>Events</h1>
-			<SearchBar />
+			<motion.h1
+				className={styles.title}
+				variants={globalVariants.popIn}
+				initial="hidden"
+				animate="visible"
+			>
+				Events
+			</motion.h1>
+			<SearchBar setUserInput={setUserInput} />
 			{isLoading ? (
-				<LoadingCircle />
+				<LoadingCircle msg="Loading..." />
 			) : isError ? (
-				<h2>Error!</h2>
+				<AlertMessage msg="Error!" />
 			) : (
-				<EventsList />
+				<EventsList events={eventsToDisplay} />
 			)}
 		</main>
 	);

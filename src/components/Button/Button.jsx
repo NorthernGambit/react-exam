@@ -1,11 +1,17 @@
-import { button } from "motion/react-client";
 import styles from "./button.module.css";
+import { motion } from "motion/react";
+import { globalVariants } from "../../animations/global.animation";
 
 const Button = ({ onClick, children }) => {
 	return (
-		<button className={styles.button} onClick={onClick}>
+		<motion.button
+			className={styles.button}
+			onClick={onClick}
+			variants={globalVariants.pulse}
+			whileTap="activate"
+		>
 			{children}
-		</button>
+		</motion.button>
 	);
 };
 

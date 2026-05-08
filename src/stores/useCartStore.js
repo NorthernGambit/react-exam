@@ -6,6 +6,8 @@ export const useCartStore = create()(
 		(set) => ({
 			cart: [],
 
+			emptyCart: () => set({ cart: [] }),
+
 			addEvent: (event, count = 1) =>
 				set((state) => {
 					let newCart;
@@ -26,9 +28,11 @@ export const useCartStore = create()(
 
 					return { cart: newCart };
 				}),
+
 			subEvent: (event) =>
 				set((state) => {
 					let newCart;
+
 					const eventExists = state.cart.find(
 						(item) => item.id === event.id,
 					);

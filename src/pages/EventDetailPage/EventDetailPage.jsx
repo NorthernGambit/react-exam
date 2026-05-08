@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import LoadingCircle from "../../components/LoadingCircle/LoadingCircle";
 import { useEventsStore } from "../../stores/useEventsStore";
 import styles from "./eventDetailPage.module.css";
@@ -6,6 +6,11 @@ import { useEffect, useState } from "react";
 import ItemQuantityCard from "../../components/ItemQuantityCard/ItemQuantityCard";
 import Button from "../../components/Button/Button";
 import { useCartStore } from "../../stores/useCartStore";
+import { timeElementConv } from "../../utils/utils";
+import AlertMessage from "../../components/AlertMessage/AlertMessage";
+import { motion } from "motion/react";
+import { globalVariants } from "../../animations/global.animation";
+import toast from "react-hot-toast";
 
 const EventDetailPage = () => {
 	const isLoading = useEventsStore((state) => state.isLoading);
@@ -13,6 +18,7 @@ const EventDetailPage = () => {
 	const events = useEventsStore((state) => state.events);
 	const getEvent = useEventsStore((state) => state.getEvent);
 	const addEvent = useCartStore((state) => state.addEvent);
+	const navigate = useNavigate();
 
 	const { id } = useParams();
 	const event = getEvent(id);
@@ -30,28 +36,55 @@ const EventDetailPage = () => {
 
 	const handleAddToCart = () => {
 		addEvent(event, count);
+		toast.success(
+			`${count}x ${event.name} biljetter har lagts i kundvagnen!`,
+			{ duration: 2000, position: "bottom-center" },
+		);
+		navigate("/events");
 	};
 
 	return (
 		<main className={styles.main}>
-			<h1 className={styles.title}>Event</h1>
+			<motion.h1
+				className={styles.title}
+				variants={globalVariants.popIn}
+				initial="hidden"
+				animate="visible"
+			>
+				Event
+			</motion.h1>
 			{isLoading ? (
-				<LoadingCircle />
+				<LoadingCircle msg="Loading..." />
 			) : isError ? (
-				<h2>Error!</h2>
+				<AlertMessage msg="Error, something went wrong!" />
 			) : event ? (
 				<>
-					<p className={styles.titleSub}>
+					<motion.p
+						className={styles.titleSub}
+						variants={globalVariants.popIn}
+						initial="hidden"
+						animate="visible"
+						custom=".2"
+					>
 						You're about to score <br /> some tickets to
-					</p>
-					<section className={styles.infoSection}>
+					</motion.p>
+					<motion.section
+						className={styles.infoSection}
+						variants={globalVariants.popIn}
+						initial="hidden"
+						animate="visible"
+						custom=".4"
+					>
 						<h2 className={styles.eventTitle}>{event.name}</h2>
-						<h3 className={styles.when}>
+						<time
+							className={styles.when}
+							dateTime={timeElementConv(event.when.date)}
+						>
 							{event.when.date} kl {event.when.from} -{" "}
 							{event.when.to}
-						</h3>
+						</time>
 						<p className={styles.where}>@ {event.where}</p>
-					</section>
+					</motion.section>
 					<ItemQuantityCard
 						onAddClick={handleAddCount}
 						onSubClick={handleSubCount}
@@ -61,7 +94,7 @@ const EventDetailPage = () => {
 					<Button onClick={handleAddToCart}>Lägg i varukorgen</Button>
 				</>
 			) : (
-				<h2>Event not found!</h2>
+				<AlertMessage msg="Event not found!" />
 			)}
 		</main>
 	);

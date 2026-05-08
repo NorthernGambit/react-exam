@@ -2,7 +2,6 @@ import { monthConv, dayConv, timeElementConv } from "../../utils/utils";
 import styles from "./eventCard.module.css";
 
 const EventCard = ({ event }) => {
-	console.log(event);
 	return (
 		<article className={styles.card}>
 			<time

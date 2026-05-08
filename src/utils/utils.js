@@ -56,12 +56,12 @@ export const timeElementConv = (date) => {
 	return `2026-${month}-${day}`;
 };
 
-export const monthConv = (date) => {
+export const monthConv = (date, capitalize = false) => {
 	const regex = / (.*)/;
 
-	const month = date.match(regex)[1].toUpperCase().slice(0, 3);
+	const month = date.match(regex)[1].slice(0, 3);
 
-	return month;
+	return capitalize ? month : month.toUpperCase();
 };
 
 export const dayConv = (date) => {
@@ -72,4 +72,15 @@ export const dayConv = (date) => {
 	}
 
 	return day;
+};
+
+export const idGenerator = (idLength) => {
+	const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	let id = "";
+
+	for (let i = 0; i < idLength; i++) {
+		id += chars[Math.floor(Math.random() * chars.length)];
+	}
+
+	return id;
 };

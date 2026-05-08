@@ -1,9 +1,14 @@
 import styles from "./searchBar.module.css";
 
-const SearchBar = () => {
+const SearchBar = ({ setUserInput }) => {
 	return (
-		<form className={styles.form}>
-			<input type="text" className={styles.input} />
+		<form role="search" className={styles.form}>
+			<input
+				aria-label="Search"
+				type="search"
+				className={styles.input}
+				onChange={(e) => setUserInput(e.target.value)}
+			/>
 		</form>
 	);
 };

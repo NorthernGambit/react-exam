@@ -1,16 +1,15 @@
-# React + Vite
+## Swiper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Jag använder Swiper bara på biljettsidan för att skapa en smidig karusell så att användaren kan swipa mellan sina biljetter. Jag använder swipers EffectCards modul vilket gjorde det hela väldigt enkelt, det enda krångliga var att förstå att man måste låta Swiper element styra storleken och alla barn bara fyller ut. Valde denna för att det löste hela biljett sidan på ett smidigt sätt istället för att bygga en helt egen custom lösning.
 
-Currently, two official plugins are available:
+## Motion
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Motion använder jag för att skapa smidiga animationer och övergångar över i princip hela sidan. Biblioteket fungerar genom att man byter ut vanliga HTML-taggar mot motion komponenter, vilket gör det enkelt att applicera mina fördefinierade animationer som jag la i sin egen mapp. Jag valde att använda det för att det med ganska lite kod gör hela applikationen mycket mer spännande och tillfredsställande att interagera med utan att gör css filerna röriga.
 
-## React Compiler
+## React Barcode
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Jag använder React Barcode som enkelt skapar upp en barcode komponent som förvandlar en sträng till en fungerande barcode. Jag har den i min TicketCard komponent är den läser in ett unikt id och genererar en skanningsbar barcode. Valde den för att den är väldigt enkel att använda med minimal kod och gör biljetten mer verklighetstrogen.
 
-## Expanding the ESLint configuration
+## Hot Toast
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Hot Toast används för att enkelt visa ett popup medellande, jag la den i layout så att den alltid syns och anroper den med toast(). Använder den för att tydligt visa användaren att något har lagts till i kundvagnen och vid klar beställning.

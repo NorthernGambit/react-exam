@@ -1,4 +1,7 @@
 .main {
+	position: relative;
+	z-index: 100;
+	background-color: var(--purple);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

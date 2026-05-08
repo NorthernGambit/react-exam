@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import image from "../../assets/loadingCircle.apng";
 import styles from "./loadingCircle.module.css";
 
-const LoadingCircle = () => {
+const LoadingCircle = ({ msg }) => {
 	return (
 		<motion.figure
 			initial={{ opacity: 0, y: 250 }}
@@ -10,7 +10,7 @@ const LoadingCircle = () => {
 			transition={{ duration: 0.5, type: "spring", bounce: 0.5 }}
 			className={styles.figure}
 		>
-			<img className={styles.image} src={image} alt="Loading..." />
+			<img className={styles.image} src={image} alt={msg} />
 			<motion.figcaption
 				animate={{
 					scale: [1, 1.15, 1],
@@ -22,10 +22,9 @@ const LoadingCircle = () => {
 				}}
 				className={styles.figCaption}
 			>
-				Loading
+				{msg}
 			</motion.figcaption>
 		</motion.figure>
 	);
 };
-motion;
 export default LoadingCircle;

@@ -2,6 +2,7 @@
 	width: 100%;
 	border: 2px solid var(--pink);
 	border-radius: 3px;
+	background-color: var(--purple-light);
 }
 
 .textContent {
@@ -11,6 +12,22 @@
 	text-align: center;
 	color: var(--white);
 	filter: drop-shadow(1px 1px 0 var(--pink));
+}
+
+.altTextContent {
+	color: var(--pink);
+	font-size: 1.5rem;
+	font-weight: 500;
+	font-style: italic;
+	padding: 0.5rem;
+}
+
+.altTextContentSub {
+	font-family: Fira Sans;
+	font-weight: 400;
+	font-size: 14px;
+	font-style: normal;
+	color: var(--green);
 }
 
 .counterGroup {
