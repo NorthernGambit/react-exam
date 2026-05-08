@@ -6,7 +6,7 @@ const Button = ({ onClick, children }) => {
 	return (
 		<motion.button
 			className={styles.button}
-			onClick={onClick}
+			onTap={onClick}
 			variants={globalVariants.pulse}
 			whileTap="activate"
 		>
