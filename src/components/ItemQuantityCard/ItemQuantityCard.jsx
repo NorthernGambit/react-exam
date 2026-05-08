@@ -25,6 +25,7 @@ const ItemQuantityCard = ({
 			)}
 			<div className={styles.counterGroup}>
 				<motion.button
+					aria-label="Subtract"
 					onClick={onSubClick}
 					className={styles.button}
 					variants={globalVariants.pulse}
@@ -32,12 +33,15 @@ const ItemQuantityCard = ({
 				>
 					-
 				</motion.button>
-				<span className={styles.count}>{count}</span>
+				<span className={styles.count} aria-label="Item count">
+					{count}
+				</span>
 				<motion.button
+					aria-label="Add"
 					onClick={onAddClick}
 					className={styles.button}
 					variants={globalVariants.pulse}
-					whileTap="activate"
+					whileTap="Activate"
 				>
 					+
 				</motion.button>

@@ -14,7 +14,7 @@ const CartAlert = () => {
 
 	const count = cart.reduce((total, current) => total + current.count, 0);
 	return (
-		<Link className={styles.link} to="/order">
+		<Link className={styles.link} to="/order" aria-label="Go to order">
 			<span className={`material-symbols-outlined ${styles.icon}`}>
 				shopping_cart
 			</span>

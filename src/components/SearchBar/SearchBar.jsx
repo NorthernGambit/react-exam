@@ -8,6 +8,7 @@ const SearchBar = ({ setUserInput }) => {
 				type="search"
 				className={styles.input}
 				onChange={(e) => setUserInput(e.target.value)}
+				placeholder="Sök här..."
 			/>
 		</form>
 	);
