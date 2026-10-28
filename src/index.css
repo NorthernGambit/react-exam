@@ -48,3 +48,20 @@ h5 {
 body {
 	background-color: var(--purple);
 }
+
+@media (min-width: 600px) {
+	body {
+		min-height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #120e24;
+	}
+
+	#root {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
